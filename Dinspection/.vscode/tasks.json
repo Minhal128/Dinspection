@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "tsc -p ./tsconfig.json",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$tsc"],
+            "detail": "Compiles the TypeScript files."
+        },
+        {
+            "label": "watch",
+            "type": "shell",
+            "command": "tsc -watch -p ./tsconfig.json",
+            "group": "build",
+            "problemMatcher": ["$tsc"],
+            "detail": "Watches for changes in TypeScript files and recompiles."
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "npm run test",
+            "group": "test",
+            "problemMatcher": ["$npm"],
+            "detail": "Runs the test suite."
+        },
+        {
+            "label": "lint",
+            "type": "shell",
+            "command": "eslint . --ext .ts,.tsx",
+            "group": "test",
+            "problemMatcher": ["$eslint"],
+            "detail": "Runs ESLint to check for code quality issues."
+        }
+    ]
+}
